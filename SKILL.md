@@ -9,7 +9,7 @@ description: 把本地文件夹中的 PDF 批量导入 Zotero 的指定分类（
 
 1. **云端与本地是两台机器**。AI 助手运行在云端沙箱，**无法**直接读写用户本机 Zotero 客户端、本地磁盘或 `zotero.sqlite`。所有写库动作都由**本机脚本/代码**发起。
 2. **两条本机桥**：
-   - **路线 A · Local API 直连（主用，需 Zotero 10+）**：本机 Python 脚本走 `http://127.0.0.1:23119/api/`，不用粘贴 JS；首次写入在 Zotero 弹窗授权。
+   - **路线 A · Local API 直连（主用，需 Zotero 10+）**：本机 Python 脚本走 Zotero 本地 API（本机回环，默认端口 23119），不用粘贴 JS；首次写入在 Zotero 弹窗授权。
    - **路线 B · Run JavaScript（兜底，任意版本）**：在 `工具 → 开发者 → 运行 JavaScript` 粘贴两段 JS。
 3. **不要改数据库文件**。禁止编辑或替换 `zotero.sqlite`；一切写入走官方 JavaScript API 或 Local API。
 4. **全文有两条来源，Zotero 索引不是唯一来源**。刚导入的 PDF 常常还没被 Zotero 索引，`/items/<attKey>/fulltext` 会返回 **404 或空字符串**；此时**必须**走 A2 兜底：用技能内置的 `nature-paper-card/scripts/prepare_paper.py` 直接从**同一个 PDF** 抽取逐页正文，并把页面渲染成图逐页核对表格列结构。**任何情况下都不得据标题、摘要或"看起来对齐"的数字臆造内容。**

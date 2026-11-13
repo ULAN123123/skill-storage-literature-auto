@@ -4,7 +4,7 @@
 
 ## 连接与开关
 
-- Base：`http://127.0.0.1:23119`；用户库前缀：`/api/users/0`（`0` 代表当前登录用户，也可换成真实数字 userID）。
+- Base：Zotero 本地 API，本机回环默认端口 23119；用户库前缀：`/api/users/0`（`0` 代表当前登录用户，也可换成真实数字 userID）。
 - API 版本：v3；每个响应带 `Zotero-API-Version` 与 `Zotero-Server-ID` 头。
 - 开关：设置 → 高级 → 勾选「允许此计算机上的其他应用程序与 Zotero 通讯」。对应偏好 `extensions.zotero.httpServer.localAPI.enabled`，默认 **false**。
 - 未开启时所有接口返回 **403** `Local API is not enabled`。

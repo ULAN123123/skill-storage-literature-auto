@@ -64,7 +64,7 @@
 | Python-Markdown（C0 必需） | `python -m pip install markdown` | `make_notes_json_v2.py` / `make_notes_json.py` 把 Markdown 转 HTML 时依赖；不装会 ImportError |
 | PyMuPDF（A2 必需） | `python -m pip install pymupdf` | 仅当 Zotero 全文 404/空、需从 PDF 兜底抽取并渲染页面图时用到；审计脚本不依赖它 |
 | PDF 资料 | 带文本层的 PDF，放在本机一个**绝对路径目录**下 | 扫描件需先 OCR |
-| 网络 | 路线 B 联网识别元数据时需要；其余本机通讯走 `127.0.0.1` | Local API 端口只本机访问，勿转发到局域网/公网 |
+| 网络 | 路线 B 联网识别元数据时需要；其余为本机回环通讯 | Local API 端口只本机访问，勿转发到局域网/公网 |
 
 > 建议开工前：备份 Zotero 数据目录；暂时关闭自动同步，批量写完后手动同步一次。
 
@@ -148,7 +148,7 @@ python scripts\zotero_local_api.py ping
 
 ### 1. 开启 Local API 通讯开关（路线 A 必做）
 
-作用：允许本机其他程序通过 `http://127.0.0.1:23119` 调用 Zotero 本地接口。
+作用：允许本机其他程序通过 Zotero 本地接口（本机回环，默认端口 23119）调用。
 
 操作路径：
 
@@ -529,7 +529,7 @@ python scripts\zotero_local_api.py write-notes `
 
 - **授权凭证不入库**：`.zotero_local_auth.json` 由本机首次授权后自动生成，已被 `.gitignore` 排除；仓库与压缩包内不含任何 key / Server-ID。
 - **本机数据不上云**：脚本产生的全文 JSON、笔记 JSON、bundle 与渲染页均为本机用户数据；B 阶段上传给 AI 的仅为你主动提供的全文内容。
-- **本地回环**：Local API 只监听 `127.0.0.1:23119`，不要转发到局域网或公网。
+- **本地回环**：Local API 只监听本机回环端口（默认 23119），不要转发到局域网或公网。
 - **不臆造内容**：正文缺失时先走 A2 兜底；确无文本层才标注需 OCR；表格列归属无法确认时不填数字。
 - **已知外部依赖**：`nature-shared` 术语台账不在包内（见第七节说明）；缺失时不影响主流程。
 - **平台验证**：Python 脚本跨平台，文档命令以 Windows PowerShell 为例；macOS/Linux 请把路径分隔符与命令对应调整。
