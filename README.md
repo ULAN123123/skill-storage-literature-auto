@@ -78,7 +78,7 @@
 
 1. 从 GitHub 下载仓库压缩包（Code → Download ZIP），或 `git clone <仓库地址>`。
 2. 解压到一个**本地固定目录**，例如：
-   - Windows：`D:\tools\zotero-paper-notes\`
+   - Windows：`<解压目录>\zotero-paper-notes\`
    - macOS / Linux：`~/tools/zotero-paper-notes/`
 3. 确认解压后根目录能看到 `SKILL.md`、`scripts/`、`references/`、`nature-paper-card/`、`assets/`。
 
@@ -208,13 +208,13 @@ python scripts\zotero_local_api.py ping
 
 | 参数 | 含义 | 填写示例（按本机替换） |
 | --- | --- | --- |
-| `--pdf-dir` | 待处理 PDF 所在本机目录 | `D:\文献\agent-papers` |
+| `--pdf-dir` | 待处理 PDF 所在本机目录 | `<PDF 目录>` |
 | `--collection` | 目标分类名，默认 `reference` | `reference` |
-| `--out-json` | 导出全文 JSON 路径 | `D:\work\zotero_fulltext.json` |
-| `--notes` | 待写回的总结 JSON 路径 | `D:\work\zotero_notes.json` |
+| `--out-json` | 导出全文 JSON 路径 | `<工作目录>\zotero_fulltext.json` |
+| `--notes` | 待写回的总结 JSON 路径 | `<工作目录>\zotero_notes.json` |
 | `--card` | 单篇 Paper Card 的 Markdown 路径（C0） | `cards\ABCD2345.md` |
 | `--key` | 该篇 Zotero 父条目 key（取自 A 阶段 JSON） | `ABCD2345` |
-| `--workdir` | A2 兜底的 bundle 与渲染页落盘目录 | `D:\work\paper-card-work` |
+| `--workdir` | A2 兜底的 bundle 与渲染页落盘目录 | `<工作目录>\paper-card-work` |
 
 ### 5.2 路线 B：JavaScript `CONFIG`（改脚本顶部后粘贴运行）
 
@@ -222,7 +222,7 @@ python scripts\zotero_local_api.py ping
 
 | 字段 | 含义 | 填写说明 |
 | --- | --- | --- |
-| `folder` | PDF 所在本机绝对路径 | 必改，如 `D:\文献\agent-papers` |
+| `folder` | PDF 所在本机绝对路径 | 必改，如 `<PDF 目录>` |
 | `collectionName` | 目标分类名 | 默认 `reference`，须与 Zotero 中分类名完全一致（区分大小写/空格） |
 | `outJson` | 导出全文 JSON 的绝对路径 | 必改 |
 | `recognize` | 是否联网识别元数据 | `true` / `false` |
