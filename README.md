@@ -1,6 +1,6 @@
 # zotero-paper-notes · Zotero 文献批量精读笔记工具包
 
-> 仓库：`ULAN123123/skill-storage-literature-auto`。核心功能：① 文献自动批量导入 Zotero；② 文献总结自动挂载到对应 Zotero 条目下的笔记。
+> 仓库名：`skill-storage-literature-auto`。核心功能：① 文献自动批量导入 Zotero；② 文献总结自动挂载到对应 Zotero 条目下的笔记。
 
 把本机一个文件夹里的 **PDF 文献批量导入 Zotero 指定分类**，逐篇做**结构化精读（Paper Card，01–16 节）**，再把总结作为**子笔记写回对应文献条目**；公式自动转成 Zotero 原生 math 节点（KaTeX 渲染）。
 
