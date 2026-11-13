@@ -1,0 +1,9 @@
+# zotero-paper-notes Python 依赖
+# 安装：python -m pip install -r requirements.txt
+
+# C0 笔记转换（make_notes_json_v2.py / make_notes_json.py）必需
+markdown>=3.5
+
+# A2 全文兜底 PDF 抽取与页面渲染（prepare_paper.py）需要；
+# 仅走 Zotero 全文索引、不做 PDF 兜底时可不强依赖。
+pymupdf>=1.24

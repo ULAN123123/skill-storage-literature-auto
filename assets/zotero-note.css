@@ -1,0 +1,70 @@
+/* Zotero 笔记全局排版（Config Editor -> extensions.zotero.note.css）
+   注意：这段 CSS 对「所有笔记」生效，不只是 Paper Card。
+   改完需要重启 Zotero。加 !important 是为了压过编辑器默认样式。 */
+
+/* ---------- 正文 ---------- */
+p, li, td, th {
+  line-height: 1.62 !important;
+  font-size: 14px;
+}
+
+p { margin: 0.45em 0 0.45em 0 !important; }
+
+ul, ol { padding-left: 1.5em !important; }
+li { margin: 0.22em 0 !important; }
+
+/* ---------- 标题层级：编号章节更紧凑 ---------- */
+h1 { font-size: 1.45em !important; margin: 0.6em 0 0.4em !important; }
+h2 {
+  font-size: 1.18em !important;
+  margin: 1.1em 0 0.45em !important;
+  padding-bottom: 0.18em;
+  border-bottom: 1px solid rgba(120, 120, 120, 0.25);
+}
+h3 { font-size: 1.04em !important; margin: 0.8em 0 0.3em !important; color: #1f2937; }
+
+/* ---------- 表格：宽表可读 ---------- */
+table {
+  border-collapse: collapse !important;
+  margin: 0.6em 0 !important;
+  font-size: 12px !important;
+  table-layout: auto;
+  max-width: 100%;
+}
+th, td {
+  border: 1px solid rgba(120, 120, 120, 0.28) !important;
+  padding: 4px 7px !important;
+  vertical-align: top !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+}
+th {
+  background: rgba(120, 130, 145, 0.12) !important;
+  font-weight: 600 !important;
+  white-space: normal !important;
+}
+tbody tr:nth-child(even) td { background: rgba(120, 130, 145, 0.05) !important; }
+
+/* ---------- 引用、代码 ---------- */
+blockquote {
+  margin: 0.6em 0 !important;
+  padding: 0.2em 0 0.2em 0.9em !important;
+  border-left: 3px solid rgba(120, 130, 145, 0.45) !important;
+  color: #4b5563;
+}
+code {
+  font-size: 0.9em !important;
+  background: rgba(120, 130, 145, 0.12) !important;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* ---------- 公式 ---------- */
+.math, .katex { font-size: 1.02em !important; }
+pre.math {
+  overflow-x: auto !important;
+  padding: 0.35em 0.5em !important;
+  margin: 0.55em 0 !important;
+  background: transparent !important;
+  white-space: pre-wrap !important;
+}

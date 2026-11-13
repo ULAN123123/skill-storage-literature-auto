@@ -1,0 +1,19 @@
+# ---- 本机 Local API 授权凭证（首次写入授权后自动生成，禁止入库）----
+scripts/.zotero_local_auth.json
+
+# ---- Python 缓存 ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ---- 运行产物（本机用户数据，不入库）----
+zotero_fulltext.json
+zotero_notes.json
+paper-card-work/
+cards/
+source_bundle.json
+rendered-pages/
+audit-report.json
+
+# ---- 打包产物 ----
+*.zip
